@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+  <title>Map Activity Demo</title>
+  <subtitle>Personal Website Of Map Activity Demo</subtitle>
+  <link href="https://example.com/feed.xml" rel="self"/>
+  <link href="https://example.com"/>
+  <updated>2019-03-25T00:00:00Z</updated>
+  <id>https://example.com</id>
+  <author>
+    <name>Map Activity Demo</name>
+    <email></email>
+  </author>
+  <entry>
+    <title>Example Event</title>
+    <link href="https://example.com/blog/2019/03/25/Rockwell-Automation-Presentation-Events/"/>
+    <updated>2019-03-25T00:00:00Z</updated>
+    <id>https://example.com/blog/2019/03/25/Rockwell-Automation-Presentation-Events/</id>
+    <content type="html">&lt;p&gt;Example Event/Activity&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>First Post</title>
+    <link href="https://example.com/blog/2014/06/14/First_Post/"/>
+    <updated>2014-06-14T00:00:00Z</updated>
+    <id>https://example.com/blog/2014/06/14/First_Post/</id>
+    <content type="html">&lt;p&gt;This is the first test post for this minimalistic blog. First overhaul of the website in a while. This time most of the code from skeleton HTML/CSS framework was removed( &lt;a href=&quot;http://www.getskeleton.com/&quot;&gt;www.getskeleton.com&lt;/a&gt; ), only kept bit of formatting (because too lazy to remove it, and their font choice are still pretty good). Still keeping the scrolling effect as that is still very nice to look at.&lt;/p&gt;
+&lt;p&gt;Edit: There has been some modifications to this website using jekyll, so it&#39;s much different now. Thus the old about text is out of date. Here is what it said.&lt;/p&gt;
+&lt;h2&gt;Some old text pre-jekyll&lt;/h2&gt;
+&lt;p&gt;This page is designed to be visually minimalistic. For the scrolling to link anchor, I used this jquery tutorial found in this &lt;a href=&quot;http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery&quot;&gt;link&lt;/a&gt;. The parallax background was done by using this tutorial in this &lt;a href=&quot;http://www.webdesignerdepot.com/2013/07/how-to-create-a-simple-parallax-effect/&quot;&gt;link&lt;/a&gt; (but modified to support multiple background elements, try scrolling the page)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;jekyllrb.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code for the Jekyll new theme at: &lt;a href=&quot;https://github.com/jglovier/jekyll-new&quot;&gt;github.com/jglovier/jekyll-new&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find the source code for Jekyll at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;github.com/jekyll/jekyll&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+</feed>

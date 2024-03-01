@@ -1,0 +1,28 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Map Activity Demo",
+  "language": "en",
+  "home_page_url": "https://example.com",
+  "feed_url": "https://example.com/feed.json",
+  "description": "Personal Website Of Map Activity Demo",
+  "author": {
+    "name": "Map Activity Demo",
+    "url": "https://example.com"
+  },
+  "items": [
+    {
+      "id": "/blog/2019/03/25/Rockwell-Automation-Presentation-Events/",
+      "url": "/blog/2019/03/25/Rockwell-Automation-Presentation-Events/",
+      "title": "Example Event",
+      "content_html":"<p>Example Event/Activity</p>\n",
+      "date_published": "2019-03-25T00:00:00Z"
+    },
+    {
+      "id": "/blog/2014/06/14/First_Post/",
+      "url": "/blog/2014/06/14/First_Post/",
+      "title": "First Post",
+      "content_html":"<p>This is the first test post for this minimalistic blog. First overhaul of the website in a while. This time most of the code from skeleton HTML/CSS framework was removed( <a href=\"http://www.getskeleton.com\">www.getskeleton.com</a> ), only kept bit of formatting (because too lazy to remove it, and their font choice are still pretty good). Still keeping the scrolling effect as that is still very nice to look at.</p>\n<p>Edit: There has been some modifications to this website using jekyll, so it's much different now. Thus the old about text is out of date. Here is what it said.</p>\n<h2>Some old text pre-jekyll</h2>\n<p>This page is designed to be visually minimalistic. For the scrolling to link anchor, I used this jquery tutorial found in this <a href=\"http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery\">link</a>. The parallax background was done by using this tutorial in this <a href=\"http://www.webdesignerdepot.com/2013/07/how-to-create-a-simple-parallax-effect/\">link</a> (but modified to support multiple background elements, try scrolling the page)</p>\n<hr />\n<p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href=\"http://jekyllrb.com/\">jekyllrb.com</a></p>\n<p>You can find the source code for the Jekyll new theme at: <a href=\"https://github.com/jglovier/jekyll-new\">github.com/jglovier/jekyll-new</a></p>\n<p>You can find the source code for Jekyll at <a href=\"https://github.com/jekyll/jekyll\">github.com/jekyll/jekyll</a></p>\n",
+      "date_published": "2014-06-14T00:00:00Z"
+    }
+  ]
+}
