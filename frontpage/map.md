@@ -17,14 +17,14 @@ order_number: 2
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
-	var  myFGMarker = new L.FeatureGroup();///???
+	var  myFGMarker = new L.FeatureGroup();
 
 {%- for post in collections.posts %}
 	{%- if post.data.location %}
 	{
 		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}])
 			.bindPopup(`
-						<a style="font-weight:bold" href="{{ post.page.url }}">{{ post.data.title }}</a> 
+						<a style="font-weight:bold" href="{{ post.page.url | url }}">{{ post.data.title }}</a> 
 						<br/> <i>{{ post.date | date_to_string }}</i>
 						<br/> {{post.data.location.name}}
 					{%- if post.data.location.description %}
