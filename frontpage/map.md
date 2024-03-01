@@ -17,12 +17,24 @@ order_number: 2
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
+
+	// Function to calculate fade based on post date
+	function getFadeRatioBasedOnTime(postDateStr) {
+	const postDate = new Date(postDateStr);
+	const currentDate = new Date();
+	const oneYear = 365 * 24 * 60 * 60 * 1000; // milliseconds in one year
+	const timeDiff = currentDate - postDate;
+	const fadeRatio = Math.min(timeDiff / oneYear, 1); // Ensure it doesn't exceed 1
+	return fadeRatio;
+	}
+
 	var  myFGMarker = new L.FeatureGroup();
 
 {%- for post in collections.posts %}
 	{%- if post.data.location %}
 	{
-		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}])
+		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}], 
+						{opacity: 1.0-getFadeRatioBasedOnTime('{{ post.data.date }}')/2})
 			.bindPopup(`
 						<a style="font-weight:bold" href="{{ post.page.url | url }}">{{ post.data.title }}</a> 
 						<br/> <i>{{ post.date | date_to_string }}</i>
