@@ -6,17 +6,17 @@
   <title>{%- if title %}{{ title }}{%- else %}{{ site.title }}{%- endif %}</title>
   <meta name="description" content="{%- if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{%- else %}{{ site.description }}{%- endif %}">
 
-  <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | prepend: relative_url }}">
-  <link rel="stylesheet" type="text/css" href="{{ "/css/custom_main.css" | prepend: relative_url }}" >
+  <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/css/custom_main.css" }}" >
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: relative_url | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html',''}}">
   <link rel="alternate" type="application/atom+xml"  title="Atom Feed for {{ site.title }}" href="{{ '/feed.xml'  | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="alternate" type="application/feed+json" title="JSON Feed for {{ site.title }}" href="{{ '/feed.json' | prepend: site.baseurl | prepend: site.url }}" />
 
   {%- if page.group contains 'notes' %}
-    <link rel="stylesheet" type="text/css" href="{{ "/css/notes.css" | prepend: relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/notes.css" }}">
   {%- endif %}
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
