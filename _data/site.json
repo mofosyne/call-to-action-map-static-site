@@ -1,0 +1,18 @@
+{
+  "title": "Map Activity Demo",
+  "language": "en",
+  "url": "https://example.com",
+  "baseurl": "",
+  "subtitle":"Personal Website Of Map Activity Demo",
+  "repo":"https://github.com/mofosyne/call-to-action-map-static-site",
+  "comments": false,
+  "author":{
+    "name": "Map Activity Demo",
+    "url":"https://example.com"
+  },
+  "email": "example@example.com",
+  "description": "",
+  "twitter_username": "",
+  "github_username": "",
+  "reddit_username": ""
+}

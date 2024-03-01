@@ -1,0 +1,210 @@
+body {
+	margin:0px;
+	padding:0px;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+{
+
+	#welcome-section
+	{
+		width:100%;
+		height:600px;
+
+		background-color: black;
+		text-align: center;
+
+		box-shadow: 0px 0px 100px #111111;
+	}
+
+	#inner-welcome-section
+	{
+		position: relative;
+		top: 50%;
+
+		font-size: 2em;
+		font-family: "Courier New", Courier, monospace;
+		text-shadow: 0px 0px 5px #ffffff ;
+		color: white;
+	}
+
+}
+
+@media only screen and (min-device-width : 480px)
+{
+
+	/*
+		Header modifications
+	*/
+
+	.site-header
+	{
+		z-index: 1;
+		margin-bottom: 10px;
+		padding:0px;
+		width: 100%;
+		position: fixed;
+		top: 0px;
+		background-color: white;
+		border-top: 0px solid #424242;
+		box-shadow: 0px 0px 10px #888888;
+		min-height:20px;
+	}
+
+	.site-title{	 line-height: 40px;	}
+	.site-nav{		 line-height: 40px;	}
+	.page-link{		 line-height: 40px;	}
+	.page-content{	 padding-top: 50px;	}
+
+	/*
+		Content Styling
+	*/
+
+	#welcome-section
+	{
+		width:100%;
+		height:400px;
+		height:100vh;
+		min-height:400px;
+		max-height:800px;
+		position: relative;
+
+		background-color: black;
+		text-align: center;
+
+		box-shadow: 0px 0px 100px #111111;
+
+		/*
+		background-image: url("/images/fairyfloss.jpg");
+		background-size: 100%;
+		background-position: 50% 20%;
+		background-attachment: fixed;
+		*/
+	}
+
+	#inner-welcome-section
+	{
+		position: relative;
+		top: 50%;
+
+		font-size: 2em;
+		font-family: "Courier New", Courier, monospace;
+		text-shadow: 0px 0px 5px #ffffff ;
+		color: white;
+
+		background-color: #111111;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#inner-welcome-section hr
+	{
+		//height: 20px;
+		width: 100%;
+		//border: 0px;
+
+		//background-image: url("/images/grass.png");
+		//background-repeat: repeat-x;
+	}
+
+} //@media only screen and (min-device-width : 480px)
+
+
+
+/*
+	Diagram and ASCII ART styling
+*/
+
+.language-ascii-art
+{
+ display: inline-block;
+ font-family: "Lucida Console", Monaco, monospace;
+ letter-spacing: -0.2em;
+ line-height: 0.8em;
+ text-shadow: 0 0 5px rgba(100,100,100,0.5);
+}
+
+.language-ascii-diagram
+{
+ display: inline-block;
+ font-family: "Lucida Console", Monaco, monospace;
+ letter-spacing: -0.1em;
+ line-height: 0.9em;
+ text-shadow: 0 0 5px rgba(100,100,100,0.5);
+}
+
+.language-ascii-art-noshadows
+{
+ display: inline-block;
+ font-family: "Lucida Console", Monaco, monospace;
+ letter-spacing: -0.2em;
+ line-height: 0.8em;
+}
+
+.language-ascii-art-blur
+{
+ color: transparent; /*hide the text this time*/
+ display: inline-block;
+ font-family: "Lucida Console", Monaco, monospace;
+ letter-spacing: -0.3em;
+ line-height: 0.6em;
+ text-shadow: 0 0 4px #000000;
+}
+
+.language-ascii-art-glow
+{
+ font-family: monospace;
+ text-shadow: 0 0 20px , 0 0 40px, 0 0 80px , 0 0 100px;
+}
+
+
+
+/*
+	About Sections
+*/
+
+#about-section
+{
+	margin-top: 100px;
+	margin-bottom: 100px;
+//    text-align: center;
+	padding: 10px;
+}
+
+#about-section hr
+{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+
+/*
+	Post/Blog section modifications
+*/
+
+#-post-section
+{
+    border-style: solid;
+	border-color: #888888;
+    border-width: 2px;
+	padding: 10px;
+	margin-top: 20px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.post-item
+{
+    border-style: solid;
+	border-color: #888888;
+    border-width: 2px;
+	padding: 10px;
+	margin-top: 20px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.leaflet-container {
+	height: 400px;
+	width: 600px;
+	max-width: 100%;
+	max-height: 100%;
+}

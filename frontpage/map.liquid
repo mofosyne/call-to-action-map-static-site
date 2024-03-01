@@ -1,0 +1,44 @@
+---
+tags: maincontent
+title:  "Activity Map"
+categories: self
+order_number: 2
+---
+
+<div class="leaflet-container" id="map" style="width: 600px; height: 400px;"></div>
+<script>
+	const map = L.map('map').setView([-27.41, 134.77], 3);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	var  myFGMarker = new L.FeatureGroup();///???
+
+{%- for post in collections.posts %}
+	{%- if post.data.location %}
+	{
+		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}])
+			.bindPopup(`
+						<a style="font-weight:bold" href="{{ post.page.url }}">{{ post.data.title }}</a> 
+						<br/> <i>{{ post.date | date_to_string }}</i>
+						<br/> {{post.data.location.name}}
+					{%- if post.data.location.description %}
+						<br/> {{post.data.location.description}}
+					{%- endif %}
+					{%- if post.data.location.address %}
+						<br/> <a target="_new" href="https://www.openstreetmap.org/?mlat={{post.data.location.latitude}}&mlon={{post.data.location.longitude}}">{{post.data.location.address}}</a> 
+					{%- endif %}
+						`);
+		myFGMarker.addLayer(marker);
+	}
+	{%- endif %}
+{%- endfor %}
+
+	map.addLayer(myFGMarker);
+	map.fitBounds(myFGMarker.getBounds(), {padding: [50, 50]});
+
+</script>
+
+---

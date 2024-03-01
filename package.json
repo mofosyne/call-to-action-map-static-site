@@ -1,0 +1,29 @@
+{
+  "name": "briankhuu.com",
+  "version": "1.0.0",
+  "description": "personal github landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass_main": "sass _sass/main.scss css/main.css --style compressed",
+    "build:sass_custom_main": "sass _sass/custom_main.scss css/custom_main.css --style compressed",
+    "build:sass_notes": "sass _sass/notes.scss css/notes.css --style compressed",
+    "build": "npm run build:sass_main && npm run build:sass_custom_main && npm run build:sass_notes && eleventy",
+    "newpost": "node util/createPost.js",
+    "start": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "sass": "^1.71.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "gray-matter": "^4.0.3",
+    "node-fetch": "^3.3.2"
+  }
+}
