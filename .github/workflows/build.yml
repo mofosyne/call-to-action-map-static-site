@@ -33,3 +33,12 @@ jobs:
           publish_dir: _site 
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List npm log files
+        if: failure()
+        run: ls -l /home/runner/.npm/_logs/
+
+      - name: Print the latest npm log file
+        if: failure()
+        run: cat $(ls -t /home/runner/.npm/_logs/ | head -n 1)
+        working-directory: /home/runner/.npm/_logs/
