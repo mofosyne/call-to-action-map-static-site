@@ -1,11 +1,14 @@
 ---
 tags: maincontent
 title:  "Activity Map"
-categories: self
+categories: main
 order_number: 2
 ---
 
+# Activity Map
+
 <div class="leaflet-container" id="map" style="width: 600px; height: 400px;"></div>
+
 <script>
 	const map = L.map('map').setView([-27.41, 134.77], 3);
 
