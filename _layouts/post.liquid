@@ -12,4 +12,24 @@ layout: default
     {{ content }}
   </article>
 
+  {% comment %} Workaround for https://github.com/11ty/eleventy/issues/2965 {% endcomment %}
+  {%- for post in collections.posts -%}
+    {% if page.url == post.url and post.data.location %}
+      <div class="post-location">
+        <h2>Location</h2>
+        <i>lat:{{post.data.location.latitude}}, long:{{post.data.location.longitude}}</i>
+        </br>
+        <strong>{{post.data.location.name}}</strong>
+      {%- if post.data.location.description %}
+        </br>
+        {{post.data.location.description}}
+      {%- endif %}
+      {%- if post.data.location.address %}
+        </br>
+        <a target="_new" href="https://www.openstreetmap.org/?mlat={{post.data.location.latitude}}&mlon={{post.data.location.longitude}}">{{post.data.location.address}}</a>
+      {%- endif %}
+      </div>
+    {% endif %}
+  {%- endfor -%}
+
 </div>
