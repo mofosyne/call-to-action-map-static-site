@@ -1,17 +1,13 @@
-name: Build Eleventy
+name: eleventy build
 
 on:
   push:
     branches: ["main"]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
+    name: build
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,6 +16,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -33,20 +31,13 @@ jobs:
       - name: Run npm build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # share between different jobs
+      - uses: actions/upload-artifact@v3
+        with:
+          name: _site
+          path: _site/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: List npm log files
-        if: failure()
-        run: ls -l /home/runner/.npm/_logs/
-
+      # Display error log if npm build fails
       - name: Print the latest npm log file
         if: failure()
         run: cat $(ls -t /home/runner/.npm/_logs/ | head -n 1)
