@@ -63,7 +63,7 @@ order_number: 2
 	{
 		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}],
 						{icon: divIconGenerateWithColour(mapIconColor('{{ post.data.date }}')),
-						title: '{{ post.data.title }}'
+						title: '{{ post.date | date_to_string }} - {{ post.data.title }}'
 						})
 			.bindPopup(`
 						<a style="font-weight:bold" href="{{ post.page.url | url }}">{{ post.data.title }}</a> 
