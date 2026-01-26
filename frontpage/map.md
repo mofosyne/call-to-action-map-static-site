@@ -59,7 +59,7 @@ order_number: 2
 	var myFGMarker = new L.FeatureGroup();
 
 {%- for post in collections.posts %}
-	{%- if post.data.location %}
+	{%- if post.data.location and post.data.location.latitude and post.data.location.longitude %}
 	{
 		var marker = L.marker([{{post.data.location.latitude}}, {{post.data.location.longitude}}],
 						{icon: divIconGenerateWithColour(mapIconColor('{{ post.data.date }}')),
