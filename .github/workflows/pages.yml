@@ -38,6 +38,9 @@ jobs:
         with:
           name: _site
           path: _site/
+          #  The id of the workflow run where the desired download artifact was uploaded from. https://github.com/orgs/community/discussions/157634
+          run-id: ${{ github.event.workflow_run.id }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
