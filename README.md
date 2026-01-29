@@ -3,8 +3,10 @@
 proof of concept of a call to action map
 
 ```
+npm ci
 npm run build
 npm run start
+npm run serve
 ```
 
 https://github.com/mofosyne/call-to-action-map-static-site
