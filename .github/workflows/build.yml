@@ -34,8 +34,8 @@ jobs:
       # share between different jobs
       - uses: actions/upload-artifact@v4
         with:
-          name: site
-          path: site/
+          name: _site
+          path: _site/
 
       # Display error log if npm build fails
       - name: Print the latest npm log file
