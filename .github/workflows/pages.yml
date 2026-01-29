@@ -3,8 +3,6 @@ name: Deploy static content to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
   workflow_run:
     workflows: ["eleventy build"]
     types:
@@ -20,34 +18,29 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      # actions/download-artifact@v3 does not allow sharing across workflows
+      - uses: actions/checkout@v4
+
       - name: Download artifact
-        id: download-artifact
         uses: actions/download-artifact@v5
         with:
           name: _site
           path: _site/
-          #  The id of the workflow run where the desired download artifact was uploaded from. https://github.com/orgs/community/discussions/157634
           run-id: ${{ github.event.workflow_run.id }}
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: _site/
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
+      - id: deployment
+        uses: actions/deploy-pages@v4
