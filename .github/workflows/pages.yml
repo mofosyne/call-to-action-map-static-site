@@ -38,7 +38,6 @@ jobs:
         with:
           name: _site
           path: _site/
-          workflow: build.yml
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
