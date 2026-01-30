@@ -4,7 +4,10 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   workflow_run:
-    workflows: ["eleventy build"]
+    workflows:
+      - eleventy build
+    branches:
+      - main
     types:
       - completed
 
@@ -18,22 +21,30 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
 jobs:
   deploy:
+    name: Deploy 
+
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download artifact
+      - name: Download artifact from "Build" workflow
         uses: actions/download-artifact@v4
         with:
-          name: site
+          name: build-output
           path: _site/
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.run_id }}
 
       - uses: actions/configure-pages@v4
 
