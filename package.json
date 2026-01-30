@@ -4,6 +4,7 @@
   "description": "proof of concept of a call to action map",
   "main": ".eleventy.js",
   "scripts": {
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/call-to-action-map-static-site/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:sass_main": "sass _sass/main.scss css/main.css --style compressed",
     "build:sass_custom_main": "sass _sass/custom_main.scss css/custom_main.css --style compressed",
