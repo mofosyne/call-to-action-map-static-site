@@ -34,7 +34,6 @@ jobs:
         with:
           name: site
           path: _site/
-          run-id: ${{ github.event.workflow_run.id }}
 
       - uses: actions/configure-pages@v4
 
